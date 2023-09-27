@@ -1,0 +1,22 @@
+{
+   "questoes":[
+      {
+         "numQuestao":0,
+         "pergunta":"pergunta",
+         "alternativaA":"Alternativa A",
+         "alternativaB":"Alternativa B",
+         "alternativaC":"Alternativa C",
+         "alternativaD":"Alternativa D",
+         "correta":"0"
+      },
+      {
+         "numQuestao":1,
+         "pergunta":"Setentrional e Meridional são sinônimos de...",
+         "alternativaA":"Leste e Oeste",
+         "alternativaB":"Norte e Sul",
+         "alternativaC":"Ocidental e Oriental",
+         "alternativaD":"Nordeste e Noroeste",
+         "correta":"Norte e Sul"
+      }
+   ]
+}
