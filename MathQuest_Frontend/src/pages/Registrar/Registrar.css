@@ -1,0 +1,81 @@
+.container-btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:  center;
+    height: 350px;
+    
+}
+
+.container form .inputContainer-nome{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+.container .inputContainer-nome input{
+    width: 559px;
+    height: 60px;
+    border-radius: 8px;
+    border: 1px solid var(--back-lines-in-white, #E6E6F0);
+    background: var(--shapes-02, #FAFAFC);
+  }
+
+  .container form .inputContainer-nome label{
+    color: var(--texts-complementos, #9c98a6);
+    text-align: left;
+    font: 400 14px/24px "Poppins", sans-serif;
+    position: relative;
+  }
+  
+
+
+  .container form .inputContainer-horizontal{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+  }
+
+.container .inputContainer-horizontal input{
+    width: 258px;
+    height: 60px;
+    border-radius: 8px;
+    border: 1px solid var(--back-lines-in-white, #E6E6F0);
+    background: var(--shapes-02, #FAFAFC);
+  }
+
+.inputContainer-horizontal label{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-left: 16px;
+    padding-right: 16px;
+    color: var(--texts-complementos, #9c98a6);
+    text-align: left;
+    font: 400 14px/24px "Poppins", sans-serif;
+    position: relative;
+  }
+  
+
+
+
+
+
+  
+
+.container .container-btn .btnMenu{
+    width: 226px;
+    height: 85px;
+    border-radius: 5px;
+    background: #212443;
+    
+    display: block;
+    
+    color: #FFF;
+    font: 600 16px/26px "Archivo", sans-serif;
+    font-size: 15px;
+    letter-spacing: 0.14px;
+    border: 1px #212443;
+    margin-left: 5px;
+
+}

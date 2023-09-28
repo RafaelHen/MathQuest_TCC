@@ -1,0 +1,44 @@
+
+.containerHeader {
+    display: inline;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.tituloJogo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerJogo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.tituloJogo h1 {
+    width: 336px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--texts-ttulos, #FFF);
+    font-family: Archivo;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 34px;
+    /* 141.667% */
+}
+
+.jogo {
+    width: 1293px;
+    height: 740px;
+    border: none;
+}
+

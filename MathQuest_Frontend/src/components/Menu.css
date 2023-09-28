@@ -1,0 +1,49 @@
+.conainer-menu {
+    width: 1440px;
+    height: 97.006px;
+    background: #212443;
+
+    display: flex;
+    flex-direction: row;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #212443;
+
+}
+
+li {
+    float: left;
+    display: inline;
+
+}
+
+li .Logo{
+    padding-left: 40px;
+    padding-top: 5px;
+
+}
+
+.sair a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 30px 16px;
+    text-decoration: none;
+
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+.conainer-lista .sair{
+    float:right;
+    align-items: center;
+    justify-content: center;
+    
+}
