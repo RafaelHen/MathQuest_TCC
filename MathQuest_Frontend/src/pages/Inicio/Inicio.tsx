@@ -19,7 +19,7 @@ function Inicio() {
                 </div>
 
                 <div className="buttonsContainer">
-                    <a href='/login' >
+                    <a href='/aluno' >
                         <button className='btn-opcoes' >Sou Aluno</button>
                     </a>
                 </div>

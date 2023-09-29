@@ -1,6 +1,6 @@
 import Logo from "../../assets/MathQuest.png"
 import Ilustra from "../../assets/Ilustra.png"
-import './Login.css';
+// import './LoginAluno.css';
 
 function Login() {
   
@@ -12,15 +12,9 @@ function Login() {
         <form>
           <img src={Logo} alt='mathQuest' className='logo' />
           <div className="inputContainer">
-            <label htmlFor="email">Email</label>
-            <input type="text" name="email" id="email" />
+            <label htmlFor="codigo">Código</label>
+            <input type="text" name="codigo" id="codigo" />
           </div>
-
-          <div className="inputContainer">
-            <label htmlFor="senha">Senha</label>
-            <input type="password" name="senha" id="senha" />
-          </div>
-
           <button className="button">Login</button>
         </form>
       </div></>)
