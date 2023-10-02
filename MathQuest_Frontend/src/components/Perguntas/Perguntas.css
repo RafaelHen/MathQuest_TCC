@@ -1,0 +1,52 @@
+.container-perguntas{
+    display: flex;
+    flex-direction: row;
+    padding-top: 0px;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: flex-start;
+}
+
+.questoes{
+    width: 305px;
+    height: 191px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background: #D9D9D9;
+    margin-left: 46px;
+}
+
+.container-btn-questoes{
+    display: flex;
+    flex-direction: column;
+    padding-top: 0px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    padding-left: 10px;
+}
+
+.btnQuestoes{
+    background: #212443;
+    border-radius: 8px;
+    padding: 15px 40px 15px 40px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+    width: 128px;
+    height: 43px;
+    position: relative;
+    overflow: hidden;
+
+    color: var(--shapes-01, #ffffff);
+    text-align: center;
+    font: 600 16px/26px "Archivo", sans-serif;
+    position: relative;
+    border: 0px #212443;
+}
+
+button{
+    margin-bottom: 1px;
+    cursor: pointer;
+}

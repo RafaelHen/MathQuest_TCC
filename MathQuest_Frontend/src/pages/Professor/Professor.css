@@ -14,32 +14,6 @@
     height: 350px;
     
 }
-
-/* .container .container-btn .btnMenu{
-    width: 226px;
-    height: 85px;
-    border-radius: 5px;
-    background: #212443;
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    color: #FFF;
-    font: 600 16px/26px "Archivo", sans-serif;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: 0.14px;
-    border: 1px #212443;
-    margin-left: 5px;
-
-} */
-
-
-
 .container .container-btn .btnMenu{
     width: 226px;
     height: 85px;
@@ -54,5 +28,7 @@
     letter-spacing: 0.14px;
     border: 1px #212443;
     margin-left: 5px;
+    cursor: pointer;
+
 
 }

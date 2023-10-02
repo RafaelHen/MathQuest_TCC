@@ -5,6 +5,7 @@ import Professor from '../pages/Professor/Professor';
 import Jogo from '../pages/Jogo/Jogo';
 import Registrar from '../pages/Registrar/Registrar'
 import LoginAluno from '../pages/Login Aluno/LoginAluno';
+import GerenciarQuestoes from '../pages/GerenciarQuestoes/GerenciarQuestoes';
 
 function AppRoutes() {
 
@@ -18,6 +19,7 @@ function AppRoutes() {
               <Route path='/registrar' element={<Registrar/>}/> 
               <Route path='/jogo' element={<Jogo/>}/> 
               <Route path='/aluno' element={<LoginAluno/>}/> 
+              <Route path='/GerenciarQuestoes' element={<GerenciarQuestoes/>}/> 
             </Routes>
           </BrowserRouter>
         </div>
