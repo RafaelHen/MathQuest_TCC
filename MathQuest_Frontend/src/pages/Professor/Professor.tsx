@@ -22,16 +22,15 @@ function Professor() {
                 <button className="btnMenu"><CreateIcon className='icon'/> 
                     Gerenciar Jogos 
                 </button>
-                <button className="btnMenu">
+                <button className="btnMenu" onClick={handOpenModal}>
                     <AddIcon className='icon'/>Cadastrar Turma
                 </button>
                 <button className="btnMenu">
                     <AutoAwesomeIcon className='icon'/>Gerenciar Turma
                 </button>
                 <button className="btnMenu"><SearchIcon className='icon' /> Consultar Desempenho </button>
-                {isModalOpen && <ModalCadastro />}
-                <button onClick={handOpenModal}>Novo</button>
             </div>
+            {isModalOpen && <ModalCadastro closeModal={handOpenModal}/>}
         </div>
     </>
     );
