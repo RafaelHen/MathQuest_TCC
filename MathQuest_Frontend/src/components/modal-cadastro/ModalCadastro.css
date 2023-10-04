@@ -3,8 +3,8 @@
     inset: 0;
     background-color: rgba(0,0,0,0.4);
     overflow: hidden;
-    height: 100vh;
-    width: 100vw;
+    /* height: 100vh;
+    width: 100vw; */
 
     display: flex;
     align-items: center;
@@ -13,29 +13,17 @@
     z-index: 999;
 }
 
-/* .modal-overlay .modal-body {
-    background-color: white;
-    padding: 24px;
-    height: 60%;
-    width: 30%;
-    border-radius: 24px;
-
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-} */
-
 .modal-overlay .modal-body {
     background-color: white;
     padding: 24px;
-    height: 60%;
-    width: 30%;
+    height: 600px;
+    width: 600px;
+    /* height: 60%;
+    width: 30%; */
     border-radius: 8px;
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: center;
     position: relative; /* Adicione essa propriedade */
 }
 
@@ -52,12 +40,13 @@
 }
 
 .modal-overlay .modal-body .input-container {
-    width: calc(100% - 24px);
+    /* width: calc(100% - 24px); */
+    width: 600px;
 }
 
-.modal-overlay .modal-body .input-container input {
-    width: calc(100% - 24px);
-    height: 35px;
+.input-container-escola input {
+    width: 200%;
+    height: 38px;
     border-radius: 8px;
     border: 1px solid var(--back-lines-in-white, #E6E6F0);
     background: var(--shapes-02, #FAFAFC);
@@ -69,6 +58,7 @@
     align-items: flex-start;
     flex-direction: column;
     position: relative;
+    justify-content: flex-start;
   }
 
 
@@ -115,7 +105,7 @@
 }
 
 .modal-overlay .modal-body {
-    padding-right: 40px; /* Ajuste conforme necessário */
+    padding-right: 40px; 
 }
 
 .close{
@@ -139,4 +129,56 @@
     border-radius: 5px;
     color: #FAFAFC;
 
+}
+
+.input-container-escola{
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.input-container-escola label{
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+#serie{
+    width: 20px;
+    height: 35px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 8px;
+    border: 1px solid var(--back-lines-in-white, #E6E6F0);
+    background: var(--shapes-02, #FAFAFC);
+}
+
+#turma{
+    width: 240px;
+    height: 35px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 8px;
+    border: 1px solid var(--back-lines-in-white, #E6E6F0);
+    background: var(--shapes-02, #FAFAFC);
+}
+
+
+.input-container-turma-serie{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding-left: 16px;
+    padding-right: 16px;
+    justify-content: space-between;
+    margin-bottom: 10px; 
+}
+
+.input-container-turma-serie label{
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.input-group-serie{
+    padding-left: 10px;
 }
