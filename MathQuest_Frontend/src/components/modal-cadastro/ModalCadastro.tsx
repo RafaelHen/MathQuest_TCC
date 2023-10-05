@@ -18,7 +18,6 @@ export function ModalCadastro({ closeModal }: ModalProps) {
           <div className="input-container-escola">
             <label htmlFor="email">Nome da Escola:</label>
             <input type="text" name="email" id="email" />
-
           </div>
           <div className="input-container-turma-serie">
             <div className="input-group">
