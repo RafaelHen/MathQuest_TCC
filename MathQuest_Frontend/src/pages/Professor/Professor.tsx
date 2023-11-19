@@ -1,10 +1,10 @@
-import Menu from '../../components/Menu';
+import Menu from '../../components/menu/Menu';
 import './Professor.css'
 import CreateIcon from '@mui/icons-material/Create';
 import AddIcon from '@mui/icons-material/Add';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import SearchIcon from '@mui/icons-material/Search';
-import   { ModalCadastro }  from '../../components/modal-cadastro/ModalCadastro';
+import { ModalCadastro }  from '../../components/modal-cadastro/ModalCadastro';
 import { useState } from 'react';
 
 

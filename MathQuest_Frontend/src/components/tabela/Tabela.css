@@ -1,0 +1,31 @@
+.tabela-aluno{
+    width: 588px;
+    height: 236px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    border: 1px solid #E6E6F0;
+    background: #f2f2f3;
+    margin-left: 1%;
+    margin-bottom: 1%;
+}
+
+.tabela-aluno th{
+    
+    width: 49px;
+    height: 21px;
+
+    color: var(--texts-complementos, #9C98A6);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 171.429% */
+}
+
+thead{
+    background: #FAFAFC;
+}
+
+tbody{
+    background: #FAFAFC;
+}

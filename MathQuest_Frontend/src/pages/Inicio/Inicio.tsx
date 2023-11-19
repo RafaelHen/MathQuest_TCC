@@ -23,9 +23,8 @@ function Inicio() {
                         <button className='btn-opcoes' >Sou Aluno</button>
                     </a>
                 </div>
-            </div>
            
-
+            </div>
         </div>
     );
 }

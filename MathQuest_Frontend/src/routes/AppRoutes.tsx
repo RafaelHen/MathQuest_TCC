@@ -6,6 +6,9 @@ import Jogo from '../pages/Jogo/Jogo';
 import Registrar from '../pages/Registrar/Registrar'
 import LoginAluno from '../pages/Login Aluno/LoginAluno';
 import GerenciarQuestoes from '../pages/GerenciarQuestoes/GerenciarQuestoes';
+import Jogos from '../pages/Jogos/Jogos'
+import GerenciaJogos from '../pages/GerenciaJogos/GerenciaJogos'
+
 
 function AppRoutes() {
 
@@ -19,7 +22,9 @@ function AppRoutes() {
               <Route path='/registrar' element={<Registrar/>}/> 
               <Route path='/jogo' element={<Jogo/>}/> 
               <Route path='/aluno' element={<LoginAluno/>}/> 
-              <Route path='/GerenciarQuestoes' element={<GerenciarQuestoes/>}/> 
+              <Route path='/gerenciarQuestoes' element={<GerenciarQuestoes/>}/> 
+              <Route path='/jogos' element={<Jogos/>}/> 
+              <Route path='/gerenciarJogos' element={<GerenciaJogos/>}/> 
             </Routes>
           </BrowserRouter>
         </div>

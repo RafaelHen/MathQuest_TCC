@@ -1,3 +1,4 @@
+import Tabela from '../tabela/Tabela';
 import './ModalCadastro.css'
 
 
@@ -29,6 +30,15 @@ export function ModalCadastro({ closeModal }: ModalProps) {
               <input type="text" name="serie" id="serie" />
             </div>
           </div>
+            <div className='fooder-modal'>
+              <h4>Informações de Cadastro</h4>  
+              <div className="footer-btn">
+                <button className="btn-adicionar">Adicionar Aluno</button>
+                <button className="btn-importar">Importar Aluno</button>
+              </div>
+            </div>
+              <Tabela/>
+
         </form>
         <button className="btn-salvar">Salvar</button>
       </div>

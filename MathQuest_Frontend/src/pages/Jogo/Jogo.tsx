@@ -1,5 +1,5 @@
 import './Jogo.css'
-import Menu from '../../components/Menu';
+import Menu from '../../components/menu/Menu';
 
 function Jogo() {
     const titulo: string = "titulo";

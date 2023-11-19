@@ -1,5 +1,5 @@
 import './Menu.css'
-import Logo from '../assets/MathQuestMenu.png'
+import Logo from '../../assets/MathQuestMenu.png'
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 
 function Menu() {
