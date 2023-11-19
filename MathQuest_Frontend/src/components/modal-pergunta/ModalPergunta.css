@@ -83,26 +83,19 @@
 
 
 .modal-overlay .modal-body .btn-salvar {
-    /* position: relative; */
-    width: 30%;
-    margin-top: 20px;
-    padding: 15px 40px;
-    align-items: first baseline;
+
+
     border-radius: 8px;
     background: #212443;
-
     color: var(--shapes-01, #FFF);
     font-family: sans-serif;
     font-size: 16px;
     font-style: normal;
-    font-weight: 600;
-    line-height: 26px; /* 162.5% */
-
+    border: none
 }
 
 .modal-overlay .modal-body .btn-salvar:hover {
-    background-color: #343547;
-    transform: scale(1);
+    background-color: #15208B; 
 }
 
 .modal-overlay .modal-body {
@@ -115,21 +108,25 @@
     right: 0; /* Posição direita em relação à direita do modal */
     width: 30px;
     height: 30px;
-    fill: #212443;
+    fill: #ffffff;
     stroke-width: 1px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     border: #212443;
     cursor: pointer; /* Adicione um cursor para indicar que é clicável */
-    z-index: 1000; /* Certifique-se de que o botão de fechar esteja na parte superior */
+    z-index: 1000; /* Certifique-se de que o botão de fechar esteja na parte superior */  
 }
 
+
+
 .modal-overlay .modal-body .header-modal button{
-    width: 55px;
+    width: 65px;
     height: 39px;
     background-color:#212443;
-    border-radius: 5px;
-    color: #FAFAFC;
+    transition: background-color 0.3s ease; 
+}
 
+.modal-overlay .modal-body .header-modal button:hover{
+    background-color: #15208B; 
 }
 
 .input-container-perguta{
@@ -160,3 +157,8 @@
     height: 87px;
 }
 
+textarea.no-resize {
+    resize: none; 
+    width: 200 px; 
+    height: 100px; 
+}

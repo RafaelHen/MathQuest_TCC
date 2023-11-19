@@ -10,7 +10,6 @@ function Jogos() {
         <div className='container-label'>
             <h2 className='perguntaLbl'>Jogos</h2>
         </div>
-
         <JogosComponent/>
     </>
     );

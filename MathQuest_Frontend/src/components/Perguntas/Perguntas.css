@@ -5,6 +5,7 @@
     flex-wrap: wrap;
     align-content: flex-start;
     justify-content: flex-start;
+    color: #ffffff;
 }
 
 .questoes{
@@ -18,35 +19,55 @@
 
 .container-btn-questoes{
     display: flex;
-    flex-direction: column;
-    padding-top: 0px;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    padding-left: 10px;
+    justify-content: space-around;
+    flex-direction: column; /* Define a direção como coluna para empilhar os botões */
+    align-items: center; /* Para centralizar os botões horizontalmente */
+
 }
 
-.btnQuestoes{
+
+.btnQuestoesEditar {
     background: #212443;
     border-radius: 8px;
-    padding: 15px 40px 15px 40px;
+    padding: 15px 40px;
     display: flex;
-    flex-direction: row;
-    gap: 10px;
     align-items: center;
-    justify-content: flex-start;
     width: 128px;
     height: 43px;
-    position: relative;
-    overflow: hidden;
-
     color: var(--shapes-01, #ffffff);
-    text-align: center;
     font: 600 16px/26px "Archivo", sans-serif;
-    position: relative;
-    border: 0px #212443;
+    border: none; 
+    transition: background-color 0.3s ease; 
+    margin-right: 500px;
+}
+.btnQuestoesEditar:hover {
+    background-color: #15208B; 
+}
+
+.btnQuestoesExcluir {
+    background: #212443;
+    border-radius: 8px;
+    align-items: center;
+    width: 128px;
+    height: 43px;
+    color: var(--shapes-01, #ffffff);
+    font: 600 16px/26px "Archivo", sans-serif;
+    border: none; 
+    transition: background-color 0.3s ease; 
+    text-align: center;
+    margin-right: 500px;
+}
+.btnQuestoesExcluir:hover {
+    background-color: #8B1515; 
 }
 
 button{
     margin-bottom: 1px;
     cursor: pointer;
+
+}
+
+.containerGerenciarQuestoes {
+    background-color: #8B1515;
+    align-items: baseline;
 }
