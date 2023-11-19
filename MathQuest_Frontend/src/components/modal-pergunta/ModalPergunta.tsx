@@ -18,7 +18,7 @@ export function ModalPergunta({ closeModal }: ModalProps) {
         <form className="form-pergunta">
           <div className="input-container-perguta">
             <label>Enunciado</label>
-            <textarea/>
+            <textarea className='no-resize'> </textarea>
           </div>
           <div className="input-container-perguta">
             <label>Resposta 1</label>

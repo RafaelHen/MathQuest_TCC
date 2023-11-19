@@ -2,15 +2,17 @@ import './JogosComponent.css'
 
 function JogosComponent() {
 
-    return ( <>
+    return (<>
+
         <div className="container-jogos">
-                <div className='jogos'>
-                    <h2></h2>
-    
-                </div>
             <h2>Ball</h2>
         </div>
-        </> );
+        <div>
+            <div className='jogos'>
+            </div>
+
+        </div>
+    </>);
 }
 
 export default JogosComponent;
