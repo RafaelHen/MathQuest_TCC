@@ -1,6 +1,6 @@
 import Menu from '../../components/menu/Menu';
 import './GerenciaJogos.css'
-import Perguntas from '../../components/perguntas/Perguntas';
+import Perguntas from '../../components/pergunta/Perguntas';
 import { useState } from 'react';
 import {ModalPergunta} from '../../components/modal-pergunta/ModalPergunta'
 

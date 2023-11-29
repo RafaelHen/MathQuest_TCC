@@ -1,17 +1,24 @@
 import './JogosComponent.css'
+import { Link } from "react-router-dom";
 
-function JogosComponent() {
+declare interface Props {
+    nomeJogo:string,
+    linkJogo:string
+}
+
+function JogosComponent({ nomeJogo,linkJogo }: Props) {
 
     return (<>
-
+    <Link to={{ pathname: `/${linkJogo}`}}>
+    
         <div className="container-jogos">
-            <h2>Ball</h2>
+            <h2 className='nomeJogo'>{nomeJogo}
+            <div className='jogos'></div>
+            </h2>
+           
         </div>
-        <div>
-            <div className='jogos'>
-            </div>
+    </Link>
 
-        </div>
     </>);
 }
 

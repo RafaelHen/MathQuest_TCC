@@ -11,12 +11,13 @@
       },
       {
          "numQuestao":1,
-         "pergunta":"Setentrional e Meridional são sinônimos de...",
-         "alternativaA":"Leste e Oeste",
-         "alternativaB":"Norte e Sul",
-         "alternativaC":"Ocidental e Oriental",
-         "alternativaD":"Nordeste e Noroeste",
-         "correta":"Norte e Sul"
+         "turma:":"123HC3",
+         "pergunta":"Das figuras geométricas a seguir, marque a alternativa que possui somente figuras planas",
+         "alternativaA":"Cubo, triângulo, pirâmide, circunferência",
+         "alternativaB":"Quadrado, retângulo, cone, trapézio",
+         "alternativaC":"Pentágono, círculo, quadrilátero, triângulo",
+         "alternativaD":"Esfera, retângulo, hexágono, prisma",
+         "correta":"Pentágono, círculo, quadrilátero, triângulo"
       }
    ]
 }

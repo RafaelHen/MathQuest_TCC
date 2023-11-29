@@ -6,16 +6,11 @@ function Menu() {
   return (<>
       <ul className="conainer-lista">
         <li><img src={Logo} alt="" className="Logo"/></li>
-        <li className='sair'><a href="#about"><ExitToAppIcon/></a></li>
+        <li className='sair'><a href="http://localhost:5173/"><ExitToAppIcon/></a></li>
 
       </ul>
 
-      {/* */}
-      {/* <div className="btn-sair">
-        <a className="sair">
-          <ExitToAppIcon />
-        </a>
-      </div> */}
+  
   </>
   );
 

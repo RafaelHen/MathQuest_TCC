@@ -1,6 +1,6 @@
 import Menu from '../../components/menu/Menu';
 import './GerenciarQuestoes.css'
-import Perguntas from '../../components/Perguntas/Perguntas';
+import Perguntas from '../../components/pergunta/Perguntas';
 import { useState } from 'react';
 import {ModalPergunta} from '../../components/modal-pergunta/ModalPergunta'
 
@@ -27,4 +27,3 @@ function GerenciarQuestoes() {
 }
 
 export default GerenciarQuestoes;
-

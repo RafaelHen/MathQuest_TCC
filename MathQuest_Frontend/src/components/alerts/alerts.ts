@@ -3,11 +3,11 @@ import Swal from 'sweetalert2'
 
 export var succesLoginAlert = Swal.mixin({
     icon: 'success',
-    title: 'Login efetuado com sucesso!',
+    title: 'Bem Vindo, Rafael!',
     toast: true,
     position: 'top-end',
     showConfirmButton: false,
-    timer: 3000,
+    timer: 1000,
     timerProgressBar: true,
     didOpen: (toast) => {
         toast.addEventListener('mouseenter', Swal.stopTimer)

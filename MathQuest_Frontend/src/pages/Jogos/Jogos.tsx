@@ -8,9 +8,10 @@ function Jogos() {
     return (<>
         <Menu />
         <div className='container-label'>
-            <h2 className='perguntaLbl'>Jogos</h2>
+            <h2>Jogos</h2>
         </div>
-        <JogosComponent/>
+        <JogosComponent nomeJogo='ColoronQuizz' linkJogo='src/service/JogoColoron/jogoColoron.html'/>
+        <JogosComponent nomeJogo='Carrasco Matrizes' linkJogo='src/service/DeterminanteGame/index.html'/>
     </>
     );
 }

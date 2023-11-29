@@ -1,8 +1,8 @@
 .container-jogos {
     display: flex;
-    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha conforme necessário */
-    align-content: flex-start; /* Alinha os itens no início da linha */
-    justify-content: flex-start; /* Alinha os itens no início da linha */
+    flex-direction: row; /* Change from align-items to flex-direction */
+    align-content: flex-start;
+    justify-content: flex-start;
 }
 
 .jogos{
@@ -14,8 +14,10 @@
     margin-left: 46px;
 }
 
-h2{
+.nomeJogo{
     display: flex;
     align-items: center;
     flex-direction: column;
+    color: #fff;
+    margin-left: 20px;
 }
