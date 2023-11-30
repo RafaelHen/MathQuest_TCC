@@ -24,11 +24,13 @@ let total  = document.querySelector('#total')
 
 // titulo.textContent = "Teste Quiz"
 let totalDeQuestoes = 0
-numero.textContent  = 1
 
 let pontos = 0
 let placar = document.querySelector('.placar')
+let correta;
 
+let numeroQuestao;
+let contador = 1;
 
 class Game {
     constructor() {
@@ -45,8 +47,10 @@ class Game {
         ];
         this.color = this.colors[0]; // the intial color of the ball
         this.prevColor = null; // used as a holder to prevent ball colors from repeating
-        this.nQuestao = document.querySelector('#nQuestao')
+        this.nQuestao = document.querySelector('#numero');
         this.pergunta = document.querySelector('#pergunta')
+        this.totalDeQuestoes = 0
+        this.correta = "";
     }
     /**
      * The game screen is scalable. I took 1200x800px as the initial scale.
@@ -130,6 +134,24 @@ class Game {
     /**
      * Display score
      */
+    
+    /**
+     * Display score
+    */
+   showResult() {
+       let score = this.score;
+       $(".stop-game").css("display", "flex");
+       $(".stop-game .final-score").text(score + "!");
+       $(".stop-game .result").text(this.showGrade(score));
+       $(".nominee").show();
+       let resultTimeline = new TimelineMax();
+       resultTimeline
+       .fromTo(".stop-game .score-container", 0.7, { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, ease: Elastic.easeOut.config(1.25, 0.5) })
+       .fromTo(".stop-game .final-score", 2, { scale: 0.5 }, { scale: 1, ease: Elastic.easeOut.config(2, 0.5) }, 0)
+       .fromTo(".stop-game .result", 1, { scale: 0.5 }, { scale: 1, ease: Elastic.easeOut.config(1.5, 0.5) }, 0.3);
+       
+    }
+    
     showQuiz() {
         $(".stop-game-quiz").css("display", "flex");
         $(".nominee").show();
@@ -138,57 +160,33 @@ class Game {
             .fromTo(".stop-game-quiz .score-container-quiz", 0.7, { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, ease: Elastic.easeOut.config(1.25, 0.5) })
             // ENDERECO DO ARQUIVO JSON
         const url = './data.json'
-        this.pegarDados(1, url)
-    }
-
-        /**
-     * Display score
-     */
-    showResult() {
-        let score = this.score;
-        $(".stop-game").css("display", "flex");
-        $(".stop-game .final-score").text(score + "!");
-        $(".stop-game .result").text(this.showGrade(score));
-        $(".nominee").show();
-        let resultTimeline = new TimelineMax();
-        resultTimeline
-            .fromTo(".stop-game .score-container", 0.7, { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, ease: Elastic.easeOut.config(1.25, 0.5) })
-            .fromTo(".stop-game .final-score", 2, { scale: 0.5 }, { scale: 1, ease: Elastic.easeOut.config(2, 0.5) }, 0)
-            .fromTo(".stop-game .result", 1, { scale: 0.5 }, { scale: 1, ease: Elastic.easeOut.config(1.5, 0.5) }, 0.3);
+        // let i = 1;
         
+        this.pegarDados(contador++, url)
     }
- 
 
-    pegarDados(i, url) {
+    
+    pegarDados(i) {
 
-        fetch(url).then(response => {
+        let url = "./data.json";
 
-            return response.json();
-
-        }).then(data => {
-
-            if (data.erro) {
-                console.log("Erro ao acessar o JSON")
-                return
-            }
-
-            // passar o quantidade de questoes para a variavel
-            let qtdQuestoes = (data.questoes.length) - 1
-            // escrver a qtdQuestoes para total
-            total.textContent = parseInt(qtdQuestoes)
-
-            // passe o valor de i no parametro
-            this.atribuirDados(data, i)
-
+        fetch(url).then((data) => {
+            data.json().then((response) => {
+                totalDeQuestoes = response.questoes.length
+                this.atribuirDados(response, i)
+                numeroQuestao = i
+            })
         })
 
     } // fim pegarDados
 
     atribuirDados(data, i) {
         if (i >= data.questoes.length) {
-            //console.log('Fim das questoes')
             i = 1
         }
+
+        console.log(data.questoes[i])
+
         nQuestao.textContent = data.questoes[i].numQuestao
         pergunta.textContent = data.questoes[i].pergunta
 
@@ -198,25 +196,23 @@ class Game {
         d.textContent = data.questoes[i].alternativaD
 
         numero.textContent = data.questoes[i].numQuestao
+        numeroQuestao = data.questoes[i].numQuestao
 
-        let certa = document.querySelector('#correct')
-        certa.value = data.questoes[i].correta
-        //console.log(resposta)
+        correta = data.questoes[i].correta
+
     }
-
-    // COMECAR O QUIZ
-    // questaoAtual = 1
-    // pegarDados(1)
-
+    
     proximaQuestao(numQuestao) {
-        let proxima = parseInt(numQuestao)
-        pegarDados(proxima)
+        this.pegarDados(numQuestao++)
+        numeroQuestao = numQuestao
     }
 
-    verificarSeAcertou(nQuestao, resposta) {
 
-        let numeroDaQuestao = nQuestao.value
-        //console.log("Questão " + numeroDaQuestao)
+
+    verificarSeAcertou(resposta) {
+
+        let numeroDaQuestao = resposta.value
+        console.log("Questão " + numeroDaQuestao)
 
         let respostaEscolhida = resposta.textContent
         //console.log("RespU " + respostaEscolhida)
@@ -224,16 +220,17 @@ class Game {
         // usar o fetch para pegar os dados
         this.pegarDados(numeroDaQuestao)
 
-        let respostaCorrect = correct.value
+        let respostaCorrect = correta
         //console.log(respostaCorrect)
 
         if (respostaEscolhida == respostaCorrect) {
-            //console.log("Acertou")
+
             pontos += 10 // pontos = pontos + 10
             this.balltween.play();
             this.timeline.play();
             $(".start-game, .stop-game-quiz").css("display", "none");
-            // $(".start-game, .stop-game-quiz game-full-flex").css("display", "none");
+
+            this.proximaQuestao(numeroDaQuestao)
 
         } else {
             this.stop();
@@ -241,30 +238,31 @@ class Game {
             this.timeline.play();
         }
 
-        let quantidadeDeQuestoes = parseInt(total.textContent)
-        //console.log("Total " + quantidadeDeQuestoes)
+        // let quantidadeDeQuestoes = parseInt(total.textContent)
+        // //console.log("Total " + quantidadeDeQuestoes)
 
-        let proxima = parseInt(numero.textContent) + 1
+        // let proxima = parseInt(numero.textContent) + 1
         //console.log("Próxima " + proxima)
 
-        setTimeout(function () {
+        // setTimeout(function () {
 
-            if (proxima > quantidadeDeQuestoes) {
-                console.log('Fim do Jogo!')
-                fimDoJogo()
-            } else {
-                proximaQuestao(proxima)
-            }
-        }, 50)
+        //     if (proxima > quantidadeDeQuestoes) {
+        //         console.log('Fim do Jogo!')
+        //         fimDoJogo()
+        //     } else {
+        //         // let proximaQuestao = parseInt(numQuestao)
+        //         this.pegarDados(proxima)
+        //     }
+        // }, 50)
 
         // atualizar o placar
-        atualizarPlacar()
+        // atualizarPlacar()
 
     }
 
-atualizarPlacar() {
-  placar.textContent = pontos
-}
+// atualizarPlacar() {
+//   placar.textContent = pontos
+// }
 
 fimDoJogo() {
 

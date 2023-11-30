@@ -469,7 +469,7 @@
 }
 
 body {
-  background-color: #28dad4;
+  background-color: #090d2c;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -574,7 +574,7 @@ a:focus, a:active {
   background: url(https://greghub.github.io/coloron/public/svg/noise.png);
 }
 
-.glow {
+/* .glow {
   position: absolute;
   left: -350px;
   top: -350px;
@@ -584,18 +584,18 @@ a:focus, a:active {
   border-radius: 50%;
   box-shadow: 0 0 100px 100px rgba(81, 237, 200, 0.34);
   z-index: 1010;
-}
+} */
 
-.sun {
+/* .sun {
   position: relative;
   left: 50%;
   top: 50%;
   width: 1px;
   height: 1px;
-  background-color: #ffe345;
+  background-color: #cfcfcf;
   border-radius: 50%;
-  box-shadow: 0 0 32px 32px #ffe345, 0 0 150px 150px rgba(103, 244, 210, 0.4);
-}
+  box-shadow: 0 0 32px 32px #e0e0e0, 0 0 150px 150px rgba(255, 255, 255, 0.4);
+} */
 
 .small-glow {
   z-index: 99;
@@ -934,7 +934,7 @@ a:focus, a:active {
   position: fixed;
   right: 54px;
   top: 20px;
-  color: #33485f;
+  color: #d07d08;
   font-size: 90px;
   font-weight: 900;
   letter-spacing: -0.1em;
