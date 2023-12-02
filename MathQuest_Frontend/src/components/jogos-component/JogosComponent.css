@@ -1,27 +1,18 @@
-.container-jogos {
-    display: flex;
-    flex-direction: row; /* Change from align-items to flex-direction */
-    align-content: flex-start;
-    justify-content: flex-start;
-}
-
-.jogos{
-    width: 305px;
-    height: 191px;
-    flex-shrink: 0;
-    border-radius: 8px;
-    background: #D9D9D9;
-    margin-left: 46px;
-}
-
 .nomeJogo{
     display: flex;
     align-items: center;
     flex-direction: column;
     color: #fff;
     margin-left: 20px;
+    font: 100 16px/24px "Archivo", sans-serif;
+
 }
 
 img{
     border-radius: 15px;
+}
+
+a{
+    text-decoration-color: none;
+    margin-left: 20px;
 }

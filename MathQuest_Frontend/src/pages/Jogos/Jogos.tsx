@@ -1,7 +1,8 @@
 import Menu from '../../components/menu/Menu';
 import './Jogos.css'
 import JogosComponent from '../../components/jogos-component/JogosComponent';
-import colornImage from '../../assets/unnamed.png'
+import colornImagem from '../../assets/unnamed.png'
+import carrascoImagem from '../../assets/Carrasco.png'
 
 function Jogos() {
 
@@ -9,10 +10,12 @@ function Jogos() {
     return (<>
         <Menu />
         <div className='container-label'>
-            <h2>Jogos</h2>
+            <h2>Bem vindo, Rafael</h2>
         </div>
-        <JogosComponent nomeJogo='ColoronQuizz' linkJogo='src/service/JogoColoron/jogoColoron.html' linkImagem={colornImage}/>
-        <JogosComponent nomeJogo='Carrasco Matrizes' linkJogo='src/service/DeterminanteGame/index.html' linkImagem={''}/>
+        <div className="jogosElementos">
+            <JogosComponent nomeJogo='ColoronQuizz' linkJogo='src/service/JogoColoron/jogoColoron.html' linkImagem={colornImagem}/>
+            <JogosComponent nomeJogo='Carrasco Matrizes' linkJogo='src/service/DeterminanteGame/index.html' linkImagem={carrascoImagem}/>
+        </div>
     </>
     );
 }

@@ -9,18 +9,11 @@ declare interface Props {
 function JogosComponent({ nomeJogo,linkJogo,linkImagem }: Props) {
 
     return (<>
-    {/* <Link to={{ pathname: `/${linkJogo}`}}>
-    </Link>
-     */}
 
-        <div className="container-jogos">
         <a href= {linkJogo}>
-            <h2 className='nomeJogo'>{nomeJogo}
-            <img src={linkImagem} width="200px"/>
-            </h2>
-           
+            <h2 className='nomeJogo'>{nomeJogo} </h2>
+            <img src={linkImagem} width="150px"/>
         </a>
-        </div>
 
     </>);
 }

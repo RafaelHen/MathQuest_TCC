@@ -1077,7 +1077,7 @@ h1 {
     height: 40px;
     text-align: center;
     display: block;
-    background: var(--secundaria);
+    background: #e3b510;
     color: var(--branco);
     padding: 4px 2px;
     border-radius: 5px;
@@ -1097,7 +1097,7 @@ h1 {
 /* article que acomoda a questao completa */
 .questao {
     max-width: 480px;
-    /*padding: 1.5rem;*/
+    padding: 2.5rem;
     border: 1px solid #ececec;
     border-radius: 8px;
     margin-bottom: 1rem;
@@ -1109,11 +1109,15 @@ h1 {
     margin: 1rem;
     padding: 1rem;
     border-radius: 8px;
-    border: 1px solid var(--secundaria);
+    border: 1px solid #e3b510;
 }
 
+.teste{
+    display: flex;
+    flex-direction: column;
+}
 .questao ol li:hover {
-    background: var(--secundaria);
+    background: #e3b510;
     cursor: pointer;
 }
 

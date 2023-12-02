@@ -198,3 +198,13 @@ body {
     justify-content: center;
 
 }
+
+#check-button {
+    color: #4B4F75;
+}
+
+
+.play-again a{
+    text-decoration: none;
+    color: #fff;
+}

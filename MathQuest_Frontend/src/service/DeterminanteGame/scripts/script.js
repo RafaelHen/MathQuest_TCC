@@ -3,16 +3,21 @@ const guessesText = document.querySelector(".guesses-text b");
 // const keyboardDiv = document.querySelector(".keyboard");
 const hangmanImage = document.querySelector(".hangman-box img");
 const gameModal = document.querySelector(".game-modal");
-const playAgainBtn = gameModal.querySelector("button");
+// const playAgainBtn = gameModal.querySelector("button");
+const playAgain = gameModal.getElementsByClassName(".play-again");
+
 const canvas = document.getElementById("matrix-canvas");
 const ctx = canvas.getContext("2d");
 
 const answerInput = document.getElementById("answer-input");
 const checkButton = document.getElementById("check-button");
 const resultText = document.getElementById("result-text");
+const acertosText = document.querySelector(".acertos-score b");
+const errosText = document.querySelector(".erros-score b");
 
 // Initializing game variables
-let currentWord, correctLetters, wrongGuessCount;
+// Initializing game variables
+let currentWord, correctLetters, wrongGuessCount, acertos = 1, erros;
 const maxGuesses = 6;
 
 const resetGame = () => {
@@ -22,78 +27,64 @@ const resetGame = () => {
     hangmanImage.src = "images/hangman-0.svg";
     guessesText.innerText = `${wrongGuessCount} / ${maxGuesses}`;
     // wordDisplay.innerHTML = currentWord.split("").map(() => `<li class="letter"></li>`).join("");
-    keyboardDiv.querySelectorAll("button").forEach(btn => btn.disabled = false);
+    // keyboardDiv.querySelectorAll("button").forEach(btn => btn.disabled = false);
     gameModal.classList.remove("show");
 }
 
-const getRandomWord = () => {
-    // Selecting a random word and hint from the wordList
-    const { word, hint } = wordList[Math.floor(Math.random() * wordList.length)];
-    currentWord = word; // Making currentWord as random word
-    // document.querySelector(".hint-text b").innerText = hint;
-    resetGame();
+// const getRandomWord = () => {
+//     // Selecting a random word and hint from the wordList
+//     const { word, hint } = wordList[Math.floor(Math.random() * wordList.length)];
+//     currentWord = word; // Making currentWord as random word
+//     // document.querySelector(".hint-text b").innerText = hint;
+//     resetGame();
 
-}
+// }
 
 const gameOver = (isVictory) => {
     // After game complete.. showing modal with relevant details
-    const modalText = isVictory ? `You found the word:` : 'The correct word was:';
+    const modalText = isVictory ? `Você sobreviveu ao carrasco!:` : 'Você não sobreviveu ao carrasco:';
     gameModal.querySelector("img").src = `images/${isVictory ? 'victory' : 'lost'}.gif`;
-    gameModal.querySelector("h4").innerText = isVictory ? 'Congrats!' : 'Game Over!';
-    gameModal.querySelector("p").innerHTML = `${modalText} <b>${currentWord}</b>`;
+    gameModal.querySelector("h4").innerText = isVictory ? 'Parabéns!' : 'Game Over!';
+    gameModal.querySelector("p").innerHTML = isVictory ? `${modalText} <b>${acertos} </b>` : `${modalText} <b>${erros} Erros</b>`;
+    // gameModal.querySelector("p").innerHTML = `${modalText} <b>${currentWord}</b>`;
     gameModal.classList.add("show");
 }
 
 
-       // Gere uma matriz aleatória
-    const matrix = generateRandomMatrix(3);
-    renderMatrix(matrix, ctx);
-   
-    checkButton.addEventListener("click", () => {
-        const userAnswer = parseInt(answerInput.value);
-        const determinant = calculateDeterminant(matrix);
+    // Gere uma matriz aleatória
+let matrix = generateRandomMatrix(2);
+renderMatrix(matrix, ctx);
+let determinant = calculateDeterminant(matrix);
+erros = 0;
+acertos = 0;
 
-        if (userAnswer === determinant) {
-            resultText.textContent = "Resposta correta!";
-        } else {
-            
-            resultText.textContent = "Resposta incorreta. A determinante é " + determinant;
-            wrongGuessCount++;
-            hangmanImage.src = `images/hangman-${wrongGuessCount}.svg`;
-        }
-   
-        guessesText.innerText = `${wrongGuessCount} / ${maxGuesses}`
-        if(wrongGuessCount === maxGuesses) return gameOver(false);
-        if(correctLetters.length === currentWord.length) return gameOver(true);
-    });
-   
-   
-
-const initGame = (button, clickedLetter) => {
-    // Verificando se clickedLetter existe no currentWord
-
-    if(currentWord.includes(clickedLetter)) {
-
-        // // Mostrando todas as letras corretas no display de palavras
-        // [...currentWord].forEach((letter, index) => {
-        //     if(letter === clickedLetter) {
-        //         correctLetters.push(letter);
-        //         wordDisplay.querySelectorAll("li")[index].innerText = letter;
-        //         wordDisplay.querySelectorAll("li")[index].classList.add("guessed");
-        //     }
-        // });
+checkButton.addEventListener("click", () => {
+    const userAnswer = parseInt(answerInput.value);
+    determinant = calculateDeterminant(matrix);
+    console.log("A determinante é " + determinant);
+    if (userAnswer === determinant) {
+        // resultText.textContent = "Resposta correta!";
+        acertos++;
+        acertosText.innerText = `${acertos}`;
+        wrongGuessCount++;
+        matrix = generateRandomMatrix(3);
+        renderMatrix(matrix, ctx);
     } else {
-        // Se a letra clicada não existir, atualize a imagem erradaGuessCount e o carrasco
+        // resultText.textContent = "Resposta incorreta. A determinante é " + determinant;
         wrongGuessCount++;
         hangmanImage.src = `images/hangman-${wrongGuessCount}.svg`;
+        erros++;
+        errosText.innerText = `${erros}`;
+        matrix = generateRandomMatrix(3);
+        renderMatrix(matrix, ctx);
     }
-    // button.disabled = true; // Desativando o botão clicado para que o usuário não possa clicar novamente
-    guessesText.innerText = `${wrongGuessCount} / ${maxGuesses}`;
 
-    // Chamando a função gameOver se alguma dessas condições for atendida
+    guessesText.innerText = `${wrongGuessCount} / ${maxGuesses}`
     if(wrongGuessCount === maxGuesses) return gameOver(false);
-    if(correctLetters.length === currentWord.length) return gameOver(true);
-}
+    // if(correctLetters.length === currentWord.length) return gameOver(true);
+});
+resetGame();
+   
 
 function renderMatrix(matrix, ctx) {
     const size = matrix.length;
@@ -166,5 +157,6 @@ function getSubmatrix(matrix, row, col) {
 
 
 
-getRandomWord();
+// getRandomWord();
 // playAgainBtn.addEventListener("click", getRandomWord);
+playAgain.addEventListener("click", () => {console.log("teste")})

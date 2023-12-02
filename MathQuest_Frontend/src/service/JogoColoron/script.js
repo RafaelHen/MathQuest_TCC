@@ -142,13 +142,14 @@ class Game {
        let score = this.score;
        $(".stop-game").css("display", "flex");
        $(".stop-game .final-score").text(score + "!");
-       $(".stop-game .result").text(this.showGrade(score));
+    //    $(".stop-game .result").text(this.showGrade(score));
        $(".nominee").show();
        let resultTimeline = new TimelineMax();
        resultTimeline
        .fromTo(".stop-game .score-container", 0.7, { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, ease: Elastic.easeOut.config(1.25, 0.5) })
        .fromTo(".stop-game .final-score", 2, { scale: 0.5 }, { scale: 1, ease: Elastic.easeOut.config(2, 0.5) }, 0)
        .fromTo(".stop-game .result", 1, { scale: 0.5 }, { scale: 1, ease: Elastic.easeOut.config(1.5, 0.5) }, 0.3);
+       fimDoJogo()
        
     }
     
@@ -310,7 +311,7 @@ fimDoJogo() {
             return "Poor...";
     }
     start() {
-        this.stop() //aqui
+        // this.stop() //aqui
         $(".start-game, .stop-game, .stop-game-quiz").css("display", "none"); // hide all the popups
         $(".nominee").hide();
         new Game();
